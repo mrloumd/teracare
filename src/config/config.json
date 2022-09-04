@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "admin",
+    "database": "teracare",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+/* eslint-disable camelcase */
+/* eslint-disable no-console */
+
+import http from 'http';
+import https from 'https';
+import fs from 'fs';
+
+import path from 'path';
+import app from '../app';
+
+import { nodeConfig } from '../config';
+
+const { nodePort, use_ssl } = nodeConfig;
+
+const createPort = (port = 8000) => port;
+
+const PORT = createPort(nodePort);
+
+const onError = (error) => {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+};
+let server;
+if (use_ssl) {
+  const options = {
+    cert: fs.readFileSync(
+      path.resolve(__dirname, '../config/ssl/fullchain.pem'),
+    ),
+    key: fs.readFileSync(path.resolve(__dirname, '../config/ssl/privkey.pem')),
+  };
+  server = https.createServer(options, app);
+} else {
+  server = http.createServer(app);
+}
+
+server.listen(PORT, () => {
+  process.send = process.send || (() => {});
+  process.send('ready');
+});
+server.on('error', onError);

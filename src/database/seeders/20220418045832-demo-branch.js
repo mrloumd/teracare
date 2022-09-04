@@ -1,0 +1,80 @@
+const { v4: uuidv4 } = require('uuid');
+
+module.exports = {
+  async up(queryInterface) {
+    await queryInterface.bulkInsert(
+      'branch',
+      [
+        {
+          id: uuidv4(),
+          name: 'Cauayan',
+          contact_person: 'Demo Contact Person',
+          contact_number: '09216630093',
+          email: 'demoemail@gmail.com',
+          address: '58/94 Fahey Bypass Suite 531',
+          barangay: 'Alicaocao ',
+          municipality: 'Cauayan',
+          province: 'Isabela',
+          region: '2',
+          zip_code: '5671',
+          country: 'Philippines',
+          is_active: true,
+          remarks: 'Demo Remarks',
+        },
+        {
+          id: uuidv4(),
+          name: 'Matag',
+          contact_person: 'Demo Contact Person',
+          contact_number: '09216630093',
+          email: 'demoemail@gmail.com',
+          address: '58/94 Fahey Bypass Suite 531',
+          barangay: 'Alicaocao ',
+          municipality: 'Cauayan',
+          province: 'Isabela',
+          region: '2',
+          zip_code: '5671',
+          country: 'Philippines',
+          is_active: true,
+          remarks: 'Demo Remarks',
+        },
+        {
+          id: uuidv4(),
+          name: 'Taligi',
+          contact_person: 'Demo Contact Person',
+          contact_number: '09216630093',
+          email: 'demoemail@gmail.com',
+          address: '58/94 Fahey Bypass Suite 531',
+          barangay: 'Alicaocao ',
+          municipality: 'Cauayan',
+          province: 'Isabela',
+          region: '2',
+          zip_code: '5671',
+          country: 'Philippines',
+          is_active: true,
+          remarks: 'Demo Remarks',
+        },
+        {
+          id: uuidv4(),
+          name: 'Bolilao',
+          contact_person: 'Demo Contact Person',
+          contact_number: '09216630093',
+          email: 'demoemail@gmail.com',
+          address: '58/94 Fahey Bypass Suite 531',
+          barangay: 'Alicaocao ',
+          municipality: 'Cauayan',
+          province: 'Isabela',
+          region: '2',
+          zip_code: '5671',
+          country: 'Philippines',
+          is_active: true,
+          remarks: 'Demo Remarks',
+        },
+      ],
+      {},
+    );
+  },
+
+  async down(queryInterface) {
+    await queryInterface.bulkDelete('branch', null, {});
+  },
+};

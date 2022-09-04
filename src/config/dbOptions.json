@@ -1,0 +1,25 @@
+{
+  "dialect": "mysql",
+  "define": {
+    "freezeTableName": true,
+    "underscored": true,
+    "timestamps": true,
+    "paranoid": false,
+    "createdAt": "created_at",
+    "updatedAt": "updated_at"
+  },
+  "pool": {
+    "max": 151,
+    "min": 5,
+    "idle": 200000,
+    "acquire": 200000
+  },
+  "retry": {
+    "max": 3
+  },
+  "dialectOptions": {
+    "decimalNumbers": true
+  },
+  "timezone": "+08:00",
+  "logging": false
+}

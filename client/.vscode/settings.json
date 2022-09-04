@@ -1,0 +1,19 @@
+{
+  // "files.exclude": {
+  //   "**/.git": true,
+  //   "**/.prettierrc": true,
+  //   "**/.editorconfig": true,
+  //   "**/jsconfig.json": true,
+  //   "**/.prettierignore": true,
+  //   "**/.svn": true,
+  //   "**/.hg": true,
+  //   "**/CVS": true,
+  //   "**/.DS_Store": true,
+  //   "**/.eslintrc.js": true,
+  //   "**/.eslintignore": true,
+  //   "**/.vscode": true
+  // },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
